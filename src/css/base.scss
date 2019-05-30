@@ -1,6 +1,97 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+@import 'variables';
+@import 'normalize';
+
+@import url('https://fonts.googleapis.com/css?family=Londrina+Outline|Londrina+Solid|Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background-color: $primary-background;
+  font-family: $body-font;
+}
+
+header {
+  background-color: $accent-1;
+  display: flex;
+  height: 130px;
+  justify-content: start;
+}
+
+h1 {
+  font-family: $logo-font;
+  font-size: 6rem;
+  margin: 10px 20px;
+}
+
+h2 {
+  color: #333;
+  font-family: $accent-font;
+  font-size: 2rem;
+  margin-top: 55px;
+}
+
+#currentDate {
+  font-size: 3rem;
+  font-weight: lighter;
+}
+
+.daily-view {
+  background-color: #eee;
+  display: flex;
+  justify-content: space-around;
+  height: 70px;
+}
+
+h3 {
+  font-family: $accent-font;
+  font-size: 2rem;
+  font-weight: lighter;
+  margin: 20px;
+}
+
+////////tab navigation
+.tabbed-sections {
+	width: 100%;
+  margin: 0 auto;
+  ul.tabs {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+  }
+}
+
+ul.tabs {
+  display: flex;
+  justify-content: flex-start;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.tabs li {
+  background: none;
+	color: #222;
+	cursor: pointer;
+  display: inline-block;
+  font-family: $accent-font;
+	padding: 10px 15px;
+}
+
+ul.tabs li.active {
+	background: #ededed;
+	color: #222;
+}
+
+.content {
+	// display: none;
+	background: #ededed;
+	padding: 15px;
+}
+
+.content.active{
+	display: inherit;
 }
