@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Overlook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Scss/base.scss" type="text/scss">
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/JnzGWgNw/pokewheel-px.png">
+    <link rel="stylesheet" href="./css/base.scss" type="text/scss">
+    <link rel="shortcut icon" href="https://i.postimg.cc/C5NVTwS0/axe.png" type="image/svg">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
       integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -13,30 +13,36 @@
   
   <body>
     <header>
-      <h1>OVERLOOK</h1><h2>for <span id="currentDate">June 3, 2019</span></h3>
+      <h1>OVERLOOK</h1><h2>for <span id="currentDate"></span>
+    </h2>
+      <form class="search-date">
+        <input type="text" id="searchDay" placeholder="dd">
+        <input type="text" id="searchMonth" placeholder="mm">
+        <input type="text" id="searchYear" placeholder="yyyy">
+        <button type="submit">send it</button>
+      </form>
     </header>
     <container class="daily-view">
-      <h3><span id="daily roomsAvail">28</span> rooms available</h3>
-      <h3><span id="daily occupancy">75%</span> occupancy</h3>
-      <h3><span id="daily salesToday">$3,675</span> in sales</h3>
+      <p class="daily-label"><span class="daily-stat" id="roomsAvail"></span> rooms available</p>
+      <p class="daily-label"><span class="daily-stat" id="occupancy">75%</span> occupancy</p>
+      <p class="daily-label"><span class="daily-stat" id="salesToday">$3,675</span> in sales</p>
     </container>
     
     <main>
       <container class="tabbed-sections">
 
         <ul class="tabs">
-          <li class="tab home active" id="homeTab">HOME</li>
           <li class="tab guests" id="guestsTab">GUESTS</li>
           <li class="tab rooms" id="roomsTab">ROOMS</li>
           <li class="tab services" id="servicesTab">SERVICES</li>
         </ul>
 
-        <section class="content home active" id="homeContent">
-        </section>
         <section class="content guests" id="guestsContent">
         </section>
+
         <section class="content rooms" id="roomsContent">
         </section>
+
         <section class="content services" id="servicesContent">
         </section>
 

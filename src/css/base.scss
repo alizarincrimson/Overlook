@@ -12,31 +12,42 @@
 body {
   background-color: $primary-background;
   font-family: $body-font;
+  font-weight: $regular;
 }
 
 header {
   background-color: $accent-1;
   display: flex;
   height: 130px;
-  justify-content: start;
+  justify-content: space-between;
 }
 
 h1 {
   font-family: $logo-font;
   font-size: 6rem;
+  font-weight: $regular;
   margin: 10px 20px;
 }
 
 h2 {
   color: #333;
-  font-family: $accent-font;
+  font-family: $body-font;
+  font-weight: $thin;
   font-size: 2rem;
   margin-top: 55px;
 }
 
 #currentDate {
+  font-family: $accent-font;
   font-size: 3rem;
-  font-weight: lighter;
+  font-weight: $light;
+}
+
+.search-date {
+  display: flex;
+  flex-direction: column;
+  margin: 18px;
+  padding: 2px;
 }
 
 .daily-view {
@@ -46,10 +57,16 @@ h2 {
   height: 70px;
 }
 
-h3 {
+.daily-stat {
   font-family: $accent-font;
-  font-size: 2rem;
-  font-weight: lighter;
+  font-size: 2.5rem;
+  font-weight: $light;
+}
+
+p.daily-label {
+  font-family: $body-font;
+  font-size: 1.5rem;
+  font-weight: $thin;
   margin: 20px;
 }
 
@@ -57,41 +74,53 @@ h3 {
 .tabbed-sections {
 	width: 100%;
   margin: 0 auto;
-  ul.tabs {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-  }
 }
 
 ul.tabs {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
 	list-style: none;
 	margin: 0px;
-	padding: 0px;
+  padding: 0px;
+  li {
+    background: none;
+	  color: #222;
+    display: inline-block;
+    font-family: $logo-font;
+    font-size: 2rem;
+    padding: 10px 15px;
+    .active {
+	    background: #ededed;
+	    color: #222;
+    }
+  }
 }
 
-ul.tabs li {
-  background: none;
-	color: #222;
-	cursor: pointer;
-  display: inline-block;
-  font-family: $accent-font;
-	padding: 10px 15px;
-}
-
-ul.tabs li.active {
-	background: #ededed;
-	color: #222;
-}
 
 .content {
-	// display: none;
+	display: none;
 	background: #ededed;
-	padding: 15px;
+  padding: 15px;
+  .active {
+	  display: inherit;
+  }
 }
 
-.content.active{
-	display: inherit;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var this = { } 
+// None of us are here to stay the same.     
