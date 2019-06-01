@@ -8,6 +8,14 @@ export default {
 
   showRooms(rooms) {
     $('#roomsAvail').text(rooms);
+  },
+
+  showOccupancy(percent) {
+    $('#occupancy').text(percent + '%');
+  },
+
+  showSales(sales) {
+    $('#salesToday').text('$' + sales);
   }
 
 

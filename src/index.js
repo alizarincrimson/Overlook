@@ -45,6 +45,7 @@ function getOrders(endpoint) {
     .catch(err => console.log('oops, orders'));
 }
 
+//// this was for input type="date" ////
 // $('#searchDate').on('click', function() {
 //   var date = new Date($('#searchDate').val());
 //   console.log(date)

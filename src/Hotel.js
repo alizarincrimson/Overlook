@@ -7,7 +7,7 @@ class Hotel {
     this.rooms = [];
     this.bookings = [];
     this.occupancy = '';
-    this.sales = '';
+    this.sales = 0;
     this.date = '';
   }
 
@@ -55,7 +55,8 @@ class Hotel {
 
   displayHomeData() {
     this.findRoomsAvailable();
-
+    this.findOccupancy();
+    this.findDailySales();
   }
 
   findRoomsAvailable() {
@@ -66,15 +67,20 @@ class Hotel {
   }
 
   findOccupancy() {
-    // divide rooms booked for current date by total rooms
-    // fire domUpdates method for #occupancy
+    let booked = this.bookings.filter(res => {
+      return res.date === this.date;
+    })
+    domUpdates.showOccupancy((booked.length / this.bookings.length) *100);
   }
 
   findDailySales() {
-    // check current date
-    // sum all orders for current date
-    // fire domUpdates method for #salesToday
-  }
+    let sold = this.services.filter(sale => {
+      if (sale.date === this.date) {
+        return this.sales += sale.totalCost;
+      };
+    domUpdates.showSales(this.sales);
+  })
+}
 
 
 
