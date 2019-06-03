@@ -16,7 +16,13 @@ export default {
 
   showSales(sales) {
     $('#salesToday').text('$' + sales);
-  }
+  },
 
+  // switchTabs() 
+  // if currentTab is guestsTab
+  //  show guestsContent, guestsTab to active
+  //  all else hidden
+  //
+  // 
 
 }

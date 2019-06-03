@@ -2,6 +2,7 @@ import $ from 'jquery';
 import './css/base.scss';
 import domUpdates from './domUpdates';
 import Hotel from './Hotel';
+import Guests from './Guests';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 // import './images/axe.svg'
@@ -56,8 +57,12 @@ $('.search-date').on('submit', function (e) {
   let day = $('#searchDay').val();
   let month = $('#searchMonth').val();
   let year = $('#searchYear').val();
-  // var date = $('#searchDay').val($('#searchMonth').val($('#searchYear').val()));
-  console.log(day, month, year);
   hotel.findDate(day, month, year);
   hotel.displayDate(day, month, year);
+})
+
+$('.search-guest-btn').on('click', function () {
+  let nameInput = $('#searchGuest').val().toLowerCase();
+  console.log(nameInput)
+  guests.searchGuest(nameInput);
 })

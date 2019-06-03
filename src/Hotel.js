@@ -1,4 +1,5 @@
 import domUpdates from "./domUpdates";
+import Guests from './Guests';
 
 class Hotel {
   constructor() {
@@ -9,16 +10,19 @@ class Hotel {
     this.occupancy = '';
     this.sales = 0;
     this.date = '';
+    // this.currentTab = '';
   }
 
   getGuests(data) {
     this.guests = data;
     console.log('user log', this.guests);
+    let newGuests = new Guests(this.guests);
   }
 
   getRooms(data) {
     this.rooms = data;
     console.log('rooms log', this.rooms);
+    // let newRooms = new Rooms(this.rooms);
   }
 
   getBookings(data) {
@@ -43,7 +47,6 @@ class Hotel {
       let day = today.getDate().toString();
       let month = today.getMonth().toString();
       this.date = day.padStart(2,0) + '/' + month.padStart(2,0) + '/' + today.getFullYear();
-      console.log('this.date', this.date)
     }
     domUpdates.showDate(displayDate);
   }
@@ -81,9 +84,6 @@ class Hotel {
     domUpdates.showSales(this.sales);
   })
 }
-
-
-
 
 
 }
