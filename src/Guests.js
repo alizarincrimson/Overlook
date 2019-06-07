@@ -5,13 +5,14 @@ class Guests {
     this.guestData = guestData;
     this.name = '';
     this.id = 0;
-}
+  }
 
   searchGuest(input) {
     let findName = this.guestData.find(name => {
-      input === guestData.name.toLowerCase()
+      input === name.toLowerCase()
     })
     console.log(findName)
+    return findName;
   }
 }
 

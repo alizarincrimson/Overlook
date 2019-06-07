@@ -15,27 +15,37 @@
     <header>
       <h1>OVERLOOK</h1><h2>for <span id="currentDate"></span>
     </h2>
-      <form class="search-date">
-        <input type="text" id="searchDay" placeholder="dd">
-        <input type="text" id="searchMonth" placeholder="mm">
-        <input type="text" id="searchYear" placeholder="yyyy">
-        <button type="submit">send it</button>
-      </form>
     </header>
-    <container class="daily-view">
-      <p class="daily-label"><span class="daily-stat" id="roomsAvail"></span> rooms available</p>
-      <p class="daily-label"><span class="daily-stat" id="occupancy"></span> occupancy</p>
-      <p class="daily-label"><span class="daily-stat" id="salesToday"></span> in sales</p>
-    </container>
     
     <main>
       <container class="tabbed-sections">
 
         <ul class="tabs">
-          <li class="tab guests" id="guestsTab">GUESTS</li>
-          <li class="tab rooms" id="roomsTab">ROOMS</li>
-          <li class="tab services" id="servicesTab">SERVICES</li>
+          <li class="homeTab">HOME</li>
+          <li class="guestsTab">GUESTS</li>
+          <li class="roomsTab">ROOMS</li>
+          <li class="servicesTab">SERVICES</li>
         </ul>
+
+        <section class="popup">
+          <h3>Welcome to Overlook!</h3>
+          <button class="enter-site-btn">Let's do this.</button>
+        </section>
+
+        <section class="content home" id="homeContent">
+          <container class="left-info">
+            <p class="daily-label"><span class="daily-stat" id="roomsAvail"></span> rooms available right now</p>
+            <p class="daily-label"><span class="daily-stat" id="occupancy"></span> occupancy</p>
+            <p class="daily-label"><span class="daily-stat" id="salesToday"></span> in sales today</p>
+          </container>
+          <form class="search-date">
+            <p class="daily-stat">Want a different day?</p>
+            <input type="text" id="searchDay" placeholder="dd">
+            <input type="text" id="searchMonth" placeholder="mm">
+            <input type="text" id="searchYear" placeholder="yyyy">
+            <button class="search-date-btn">Get it.</button>
+          </form>
+        </section>
 
         <section class="content guests" id="guestsContent">
           <label for="searchGuest">Find a Guest</label>

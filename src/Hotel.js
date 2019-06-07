@@ -1,5 +1,8 @@
 import domUpdates from "./domUpdates";
 import Guests from './Guests';
+import Rooms from './Rooms';
+import Bookings from './Bookings';
+import Services from './Services';
 
 class Hotel {
   constructor() {
@@ -22,7 +25,7 @@ class Hotel {
   getRooms(data) {
     this.rooms = data;
     console.log('rooms log', this.rooms);
-    // let newRooms = new Rooms(this.rooms);
+    let newRooms = new Rooms(this.rooms);
   }
 
   getBookings(data) {
@@ -57,6 +60,7 @@ class Hotel {
   }
 
   displayHomeData() {
+    console.log('test')
     this.findRoomsAvailable();
     this.findOccupancy();
     this.findDailySales();

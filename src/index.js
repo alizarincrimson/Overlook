@@ -11,11 +11,11 @@ let hotel;
 $(document).ready(() => {
   hotel = new Hotel();
   hotel.displayDate();
+  $('.content').hide();
   getUsers();
   getBooks();
   getRooms();
   getOrders();
-  hotel.displayHomeData();
 })
 
 function getUsers(endpoint) {
@@ -46,14 +46,22 @@ function getOrders(endpoint) {
     .catch(err => console.log('oops, orders'));
 }
 
+$('.enter-site-btn').on('click', function() {
+  $('#homeContent').show()
+  $('.popup').hide();
+  $('#guestsContent').hide();
+  $('#roomsContent').hide();
+  $('#servicesContent').hide();
+  hotel.displayHomeData();
+})
+
 //// this was for input type="date" ////
 // $('#searchDate').on('click', function() {
 //   var date = new Date($('#searchDate').val());
 //   console.log(date)
 // });
 
-$('.search-date').on('submit', function (e) {
-  e.preventDefault();
+$('.search-date-btn').on('click', function() {
   let day = $('#searchDay').val();
   let month = $('#searchMonth').val();
   let year = $('#searchYear').val();
@@ -61,8 +69,36 @@ $('.search-date').on('submit', function (e) {
   hotel.displayDate(day, month, year);
 })
 
-$('.search-guest-btn').on('click', function () {
+$('.search-guest-btn').on('click', function() {
   let nameInput = $('#searchGuest').val().toLowerCase();
   console.log(nameInput)
   guests.searchGuest(nameInput);
+})
+
+$('.homeTab').on('click', function() {
+  $('#homeContent').show();
+  $('#guestsContent').hide();
+  $('#roomsContent').hide();
+  $('#bookingsContent').hide();
+})
+
+$('.guestsTab').on('click', function () {
+  $('#homeContent').hide();
+  $('#guestsContent').show();
+  $('#roomsContent').hide();
+  $('#bookingsContent').hide();
+})
+
+$('.roomsTab').on('click', function () {
+  $('#homeContent').hide();
+  $('#guestsContent').hide();
+  $('#roomsContent').show();
+  $('#bookingsContent').hide();
+})
+
+$('.bookingsTab').on('click', function () {
+  $('#homeContent').hide();
+  $('#guestsContent').hide();
+  $('#roomsContent').hide();
+  $('#bookingsContent').show();
 })
